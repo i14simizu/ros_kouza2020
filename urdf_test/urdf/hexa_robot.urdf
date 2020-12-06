@@ -1,0 +1,36 @@
+<robot name="hexa_robot">
+    <link name="base_link"/>
+
+    <joint name="body_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="body_link"/>
+        <origin xyz="0.0 0.0 0.0225" rpy="0 0 0"/>
+    </joint>
+    <link name="body_link">
+        <visual name="hexa">
+            <geometry>
+                <mesh filename="package://urdf_test/urdf/hexagon_blendered.stl"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 2.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="left_wheel_joint" type="continuous">
+        <parent link="body_link"/>
+        <child link="left_wheel_link"/>
+        <origin xyz="0.15 0 0.025" rpy="0 0 0"/>
+    </joint>
+    <link name="left_wheel_link">
+        <visual name="wheel">
+            <origin xyz="0 0 0" rpy="${radians(-90)} 0 0"/>
+            <geometry>
+                <cylinder length="0.020" radius="0.025"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 2.0"/>
+            </material>
+        </visual>
+    </link>
+</robot>

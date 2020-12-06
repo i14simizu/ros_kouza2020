@@ -1,0 +1,63 @@
+<robot name="hexa_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="wheel" params="parent child xyz">
+        <joint name="${child}_joint" type="continuous">
+            <origin xyz="${xyz}" rpy="${radians(-90)} 0 ${radians(-90)}"/>
+            <parent link="${parent}"/>
+            <child link="${child}_link"/>
+            <axis xyz="0 0 1"/>
+        </joint>
+        <link name="${child}_link">
+            <visual>
+                <geometry>
+                    <cylinder length="0.020" radius="0.025"/>
+                </geometry>
+                <material name="red">
+                    <color rgba="1.0 0.0 0.0 2.0"/>
+                </material>
+            </visual>
+        </link>
+    </xacro:macro>
+
+    <xacro:macro name="ball" params="parent child xyz">
+        <joint name="${child}_joint" type="fixed">
+            <origin xyz="${xyz}" rpy="0 0 0"/>
+            <parent link="${parent}"/>
+            <child link="${child}_link"/>
+        </joint>
+        <link name="${child}_link">
+            <visual>
+                <geometry>
+                    <sphere radius="0.025"/>
+                </geometry>
+                <material name="blue">
+                    <color rgba="0.0 0.0 1.0 2.0"/>
+                </material>
+            </visual>
+        </link>
+    </xacro:macro>
+
+    <link name="base_link"/>
+
+    <joint name="body_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="body_link"/>
+        <origin xyz="0.0 0.0 0.0225" rpy="0 0 0"/>
+    </joint>
+    <link name="body_link">
+        <visual name="hexa">
+            <geometry>
+                <mesh filename="package://urdf_test/urdf/hexagon_blendered.stl"/>
+            </geometry>
+            <material name="green">
+                <color rgba="0.0 1.0 0.0 2.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <xacro:wheel parent="body_link" child="left_wheel" xyz="0.15 0 0"/>
+    <xacro:wheel parent="body_link" child="right_wheel" xyz="-0.15 0 0"/>
+
+    <xacro:ball parent="body_link" child="front_ball" xyz="0 0.120 0"/>
+    <xacro:ball parent="body_link" child="back_ball" xyz="0 -0.120 0"/>
+</robot>
