@@ -1,4 +1,4 @@
-<robot name="hexa_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="hexarobo_s" xmlns:xacro="http://ros.org/wiki/xacro">
 
     <xacro:macro name="wheel" params="parent child xyz">
         <joint name="${child}_joint" type="continuous">
@@ -6,7 +6,18 @@
             <parent link="${parent}"/>
             <child link="${child}_link"/>
             <axis xyz="0 0 1"/>
+            <limit velocity="10.0" effort="0.2" />
+            <dynamics damping="0.1"/>
         </joint>
+        <transmission name="${child}_move" type="SimpleTransmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="${child}_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="${child}_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
         <link name="${child}_link">
             <inertial>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -29,6 +40,8 @@
         </link>
         <gazebo reference="${child}_link">
             <material>Gazebo/Red</material>
+            <mu1 value="1.0" />
+            <mu2 value="1.0" />
         </gazebo>
     </xacro:macro>
 
@@ -60,6 +73,8 @@
         </link>
         <gazebo reference="${child}_link">
             <material>Gazebo/Blue</material>
+            <mu1 value="0.5" />
+            <mu2 value="0.5" />
         </gazebo>
     </xacro:macro>
 
@@ -99,4 +114,12 @@
 
     <xacro:ball parent="body_link" child="front_ball" xyz="0 0.120 0"/>
     <xacro:ball parent="body_link" child="back_ball" xyz="0 -0.120 0"/>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/hexarobo_s</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo>
 </robot>
