@@ -2,11 +2,12 @@
 
 now building
 
-TODO : 
-・helloの追加
-・teleopの追加
-・tokuken_robotの追加
+TODO : </b>
+・helloの追加</b>
+・teleopの追加</b>
+・tokuken_robotの追加</b>
 
-検討事項
-・CMakeListsを追加すべき？→cloneした時にどうなるかを検証すべき
-・
+検討事項</b>
+・CMakeListsを追加すべき？→cloneした時にどうなるかを検証すべき</b>
+・</b>
+</b>
