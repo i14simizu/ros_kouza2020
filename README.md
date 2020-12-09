@@ -10,5 +10,5 @@ TODO : </b>
 
 検討事項</b>
 + CMakeListsを追加すべき？→cloneした時にどうなるかを検証すべき</b>
-+ </b>
++ mac osでのxquartzに投げられるのか問題</b>
 </b>
