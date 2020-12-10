@@ -4,7 +4,6 @@ now building
 
 TODO : </b>
 
-* helloの追加</b>
 * teleopの追加</b>
 * tokuken_robotの追加</b>
 
