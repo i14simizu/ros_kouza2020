@@ -12,5 +12,5 @@ TODO : </b>
 + mac osでのxquartzに投げられるのか問題</b>
 
 注意事項</b>
-+ 最近のバグ？でrosmsgについてwarningが出るので、apt update&apt upgradeをする</b>
++ 最近のバグ？でrosmsgについてwarningが出るので、apt update&apt upgrade, restartをする</b>
 
