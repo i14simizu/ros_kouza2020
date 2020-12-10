@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <audio>
+      <device>0</device>
+    </audio>
+    <!--
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+  -->
+    <include>
+      <uri>model://base</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <scene>
+      <shadows>0</shadows>
+      <grid>0</grid>
+    </scene>
+
+    <physics>
+      <ode>
+        <solver>
+          <island_threads>5</island_threads>
+          <thread_position_correction>1</thread_position_correction>
+          <iters>10</iters>
+        </solver>
+      </ode>
+    </physics>
+  
+  
+  </world>
+</sdf>

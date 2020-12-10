@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+
+<robot name="tokuken_robot_b">
+	<link name="world"/>
+
+	<joint name="base_joint" type="fixed">
+		<parent link="world"/>
+		<child link="base_link"/>
+	</joint>
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/base_ad.stl" />
+			</geometry>
+			<material name="red">
+				<color rgba="0.5 0 0 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/base_ad.stl" />
+			</geometry>
+		</collision>
+		<inertial>
+        	<mass value="0.7"/><!--tekitou-->
+        	<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      	</inertial>
+	</link>
+	<gazebo reference="base_link">
+    	<material>Gazebo/Red</material>
+  	</gazebo>
+
+	<link name="a_crank_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank1_ad.stl" />
+			</geometry>
+			<material name="green">
+				<color rgba="0 0.7 0 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank1_ad.stl" />
+			</geometry>
+		</collision>
+		<inertial>
+        	<mass value="0.2"/><!--tekitou-->
+        	<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      	</inertial>
+	</link>
+	<gazebo reference="a_crank_link">
+    	<material>Gazebo/Blue</material>
+  	</gazebo>
+
+	<link name="d_crank_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank1_ad.stl" />
+			</geometry>
+			<material name="green">
+				<color rgba="0 0.7 0 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank1_ad.stl" />
+			</geometry>
+		</collision>
+		<inertial>
+        	<mass value="0.2"/><!--tekitou-->
+        	<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      	</inertial>
+	</link>
+	<gazebo reference="d_crank_link">
+    	<material>Gazebo/Blue</material>
+  	</gazebo>
+
+	<link name="b_crank_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank2_ad.stl" />
+			</geometry>
+			<material name="green">
+				<color rgba="0 0.7 0 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank1_ad.stl" />
+			</geometry>
+		</collision>
+		<inertial>
+        	<mass value="0.2"/><!--tekitou-->
+        	<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      	</inertial>
+	</link>
+	<gazebo reference="b_crank_link">
+    	<material>Gazebo/Blue</material>
+  	</gazebo>
+
+	<link name="c_crank_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank2_ad.stl" />
+			</geometry>
+			<material name="green">
+				<color rgba="0 0.7 0 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/crank1_ad.stl" />
+			</geometry>
+		</collision>
+		<inertial>
+        	<mass value="0.2"/><!--tekitou-->
+        	<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      	</inertial>
+	</link>
+	<gazebo reference="c_crank_link">
+    	<material>Gazebo/Blue</material>
+  	</gazebo>
+
+	<link name="a_1_asi_link">
+		<visual>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/asi_ad.stl" />
+			</geometry>
+			<material name="blue">
+				<color rgba="0 0 0.7 1" />
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://tokuken_robot_description/meshes/asi_ad.stl" />
+			</geometry>
+		</collision>
+		<inertial>
+        	<mass value="0.05"/><!--tekitou-->
+        	<inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2"/>
+      	</inertial>
+	</link>
+	<gazebo reference="a_1_asi_link">
+    	<material>Gazebo/Green</material>
+  	</gazebo>
+
+	<joint name="base_to_a" type="continuous">
+		<parent link="base_link"/>
+		<child link="a_crank_link"/>
+		<origin xyz="-0.0777 0.1375 0.013" rpy="0 0 0"/>
+		<axis xyz="1 0 0"/>
+	</joint>
+	<transmission name="base_a_trans">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<joint name="base_to_a">
+      		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    	</joint>
+    	<actuator name="base_a_motor">
+       		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       		<mechanismReduction>1</mechanismReduction>
+    	</actuator>
+  	</transmission>
+
+	<joint name="base_to_d" type="continuous">
+		<parent link="base_link"/>
+		<child link="d_crank_link"/>
+		<origin xyz="-0.0777 0.0475 0.013" rpy="0 0 0"/>
+		<axis xyz="1 0 0"/>
+	</joint>
+	<transmission name="base_d_trans">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<joint name="base_to_d">
+      		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    	</joint>
+    	<actuator name="base_d_motor">
+       		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       		<mechanismReduction>1</mechanismReduction>
+    	</actuator>
+  	</transmission>
+
+	<joint name="base_to_b" type="continuous">
+		<parent link="base_link"/>
+		<child link="b_crank_link"/>
+		<origin xyz="-0.1623 0.1375 0.013" rpy="0 0 0"/>
+		<axis xyz="1 0 0"/>
+	</joint>
+	<transmission name="base_b_trans">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<joint name="base_to_b">
+      		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    	</joint>
+    	<actuator name="base_b_motor">
+       		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       		<mechanismReduction>1</mechanismReduction>
+    	</actuator>
+  	</transmission>
+
+	<joint name="base_to_c" type="continuous">
+		<parent link="base_link"/>
+		<child link="c_crank_link"/>
+		<origin xyz="-0.1623 0.0475 0.013" rpy="0 0 0"/>
+		<axis xyz="1 0 0"/>
+	</joint>
+	<transmission name="base_c_trans">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<joint name="base_to_c">
+      		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    	</joint>
+    	<actuator name="base_c_motor">
+       		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       		<mechanismReduction>1</mechanismReduction>
+    	</actuator>
+  	</transmission>
+
+	<joint name="a_to_asi_1" type="continuous">
+		<parent link="a_crank_link"/>
+		<child link="a_1_asi_link"/>
+		<origin xyz="0.016 0 0" rpy="0 0 0"/>
+		<axis xyz="1 0 0"/>
+	</joint>
+	<transmission name="a_asi_1_trans">
+    	<type>transmission_interface/SimpleTransmission</type>
+    	<joint name="a_to_asi_1">
+      		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    	</joint>
+    	<!--
+    	<actuator name="base_c_motor">
+       		<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       		<mechanismReduction>1</mechanismReduction>
+    	</actuator>
+    	-->
+  	</transmission>
+
+
+	<gazebo>
+    	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      		<robotNamespace>/tokuken_robot_b</robotNamespace>
+      		<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      		<legacyModeNS>true</legacyModeNS>
+    	</plugin>
+  	</gazebo>
+
+</robot>

@@ -1,0 +1,478 @@
+<?xml version="1.0" ?>
+<robot name="base">
+  <!--dummy joint-->
+  <joint name="base_link_to_chassis" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+  </joint>
+
+  <joint name="base_to_a" type="continuous">
+    <parent link="chassis"/>
+    <child link="a_crank_link"/>
+    <origin rpy="0 0 0" xyz="-0.0777 0.1375 0.113"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <joint name="base_to_b" type="fixed">
+    <parent link="chassis"/>
+    <child link="b_crank_link"/>
+    <origin rpy="0 0 0" xyz="-0.1623 0.1375 0.113"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="base_to_c" type="fixed">
+    <parent link="chassis"/>
+    <child link="c_crank_link"/>
+    <origin rpy="0 0 0" xyz="-0.1623 0.0475 0.113"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="base_to_d" type="fixed">
+    <parent link="chassis"/>
+    <child link="d_crank_link"/>
+    <origin rpy="0 0 0" xyz="-0.0777 0.0475 0.113"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="a_to_asi_1" type="fixed">
+    <parent link="a_crank_link"/>
+    <child link="asi_a_1"/>
+    <origin rpy="0.78 0 0" xyz="0.015 0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="a_to_asi_2" type="fixed">
+    <parent link="a_crank_link"/>
+    <child link="asi_a_2"/>
+    <origin rpy="0.21991  0       0" xyz="0.033  0    -0.005"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="a_to_asi_3" type="fixed">
+    <parent link="a_crank_link"/>
+    <child link="asi_a_3"/>
+    <origin rpy="-0.39095 0 0" xyz="0.052 -0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="d_to_asi_1" type="fixed">
+    <parent link="d_crank_link"/>
+    <child link="asi_d_1"/>
+    <origin rpy="0.78 0 0" xyz="0.015 0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="d_to_asi_2" type="fixed">
+    <parent link="d_crank_link"/>
+    <child link="asi_d_2"/>
+    <origin rpy="0.21991 0 0" xyz="0.033 0 -0.005"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="d_to_asi_3" type="fixed">
+    <parent link="d_crank_link"/>
+    <child link="asi_d_3"/>
+    <origin rpy="-0.39095 0 0" xyz="0.052 -0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="b_to_asi_1" type="fixed">
+    <parent link="b_crank_link"/>
+    <child link="asi_b_1"/>
+    <origin rpy="0.78 0 0" xyz="-0.015 0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="b_to_asi_2" type="fixed">
+    <parent link="b_crank_link"/>
+    <child link="asi_b_2"/>
+    <origin rpy="0.21991 0 0" xyz="-0.033 0 -0.005"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="b_to_asi_3" type="fixed">
+    <parent link="b_crank_link"/>
+    <child link="asi_b_3"/>
+    <origin rpy="-0.39095 0 0" xyz="-0.051 -0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="c_to_asi_1" type="fixed">
+    <parent link="c_crank_link"/>
+    <child link="asi_c_1"/>
+    <origin rpy="0.78 0 0" xyz="-0.015 0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="c_to_asi_2" type="fixed">
+    <parent link="c_crank_link"/>
+    <child link="asi_c_2"/>
+    <origin rpy="0.21991 0 0" xyz="-0.033 0 -0.005"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <joint name="c_to_asi_3" type="fixed">
+    <parent link="c_crank_link"/>
+    <child link="asi_c_3"/>
+    <origin rpy="-0.39095 0 0" xyz="-0.051 -0.00432 -0.0025"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+
+  <!--dummy link-->
+  <link name="base_link"/>
+
+  <link name="chassis">
+    <inertial>
+      <mass value="0.323853"/>
+      <origin rpy="0 0 0" xyz="-0.12003 0.08857 0.02481"/>
+      <inertia ixx="0.001101" ixy="-0.000000019489" ixz="-0.00000032811" iyy="0.001144" iyz="-0.00002903" izz="0.001950"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/base.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/base_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="a_crank_link">
+    <inertial>
+      <mass value="0.094516"/>
+      <origin rpy="0 0 0" xyz="0.03743 -0.00054 -0.00311"/>
+      <inertia ixx="0.00001618" ixy="0.000004583807" ixz="0.000000791555" iyy="0.00002918" iyz="-0.000000161333" izz="0.00003007"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank1_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="b_crank_link">
+    <inertial>
+      <mass value="0.094516"/>
+      <origin rpy="0 0 0" xyz="0.03743 0 -0.00315"/>
+      <inertia ixx="0.00001618" ixy="-0.00000465162" ixz="0.000000016441" iyy="0.00002915" iyz="0.0000000000001060" izz="0.00003010"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="c_crank_link">
+    <inertial>
+      <mass value="0.094516"/>
+      <origin rpy="0 0 0" xyz="0.03743 0 -0.00315"/>
+      <inertia ixx="0.00001618" ixy="-0.00000465162" ixz="0.000000016441" iyy="0.00002915" iyz="0.0000000000001060" izz="0.00003010"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="d_crank_link">
+    <inertial>
+      <mass value="0.094516"/>
+      <origin rpy="0 0 0" xyz="0.03743 -0.00054 -0.00311"/>
+      <inertia ixx="0.00001618" ixy="0.000004583807" ixz="0.000000791555" iyy="0.00002918" iyz="-0.000000161333" izz="0.00003007"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank1.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/crank1_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_a_1">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="0.00448 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_a_2">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="0.00448 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_a_3">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="0.00448 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_d_1">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="0.00448 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_d_2">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="0.00448 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_d_3">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="0.00448 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_b_1">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="-0.00451 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_b_2">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="-0.00451 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_b_3">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="-0.00451 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_c_1">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="-0.00451 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_c_2">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="-0.00451 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="asi_c_3">
+    <inertial>
+      <mass value="0.010706"/>
+      <origin rpy="0 0 0" xyz="-0.00451 -0.00563 -0.00377"/>
+      <inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+    </inertial>
+    <collision name="collision">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://tokuken_robot_description/models/base/asi_2_ad.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
