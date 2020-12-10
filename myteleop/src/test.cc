@@ -13,6 +13,7 @@ using namespace std;
 void mysigintHandler(int sig){
     ROS_INFO("shutdown now.\n");
     ros::shutdown();
+    exit(1);
 }
 
 int main(int argc, char **argv){
