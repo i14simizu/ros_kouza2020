@@ -4,7 +4,7 @@ now building
 
 TODO : </b>
 
-* teleopの追加</b>
+* teleopの追加 - myteleopとして作成中</b>
 * tokuken_robotの追加</b>
 
 検討事項</b>
