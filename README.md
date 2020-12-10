@@ -13,6 +13,6 @@ TODO : </b>
 
 注意事項</b>
 + 最近のバグ？でrosmsgについてwarningが出るので、apt update&apt upgrade, restartをする</b>
-+ ros-melodic-teleop-twist-keyboardをインストール</b>
+
 
 
