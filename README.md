@@ -4,8 +4,8 @@ now building
 
 TODO : </b>
 
-* teleopの追加 - myteleopとして作成中</b>
 * tokuken_robotの追加</b>
+* tokuken_robotにLRFを載せてみる</b>
 
 検討事項</b>
 + CMakeListsを追加すべき？→cloneした時にどうなるかを検証すべき</b>
