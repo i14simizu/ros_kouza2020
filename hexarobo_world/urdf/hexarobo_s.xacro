@@ -93,7 +93,7 @@
         </inertial>
         <visual name="hexa">
             <geometry>
-                <mesh filename="package://urdf_test/urdf/hexagon_blendered.stl"/>
+                <mesh filename="package://hexarobo_world/urdf/hexagon_blendered.stl"/>
             </geometry>
             <material name="green">
                 <color rgba="0.0 1.0 0.0 2.0"/>

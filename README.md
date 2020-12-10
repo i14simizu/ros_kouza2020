@@ -10,4 +10,7 @@ TODO : </b>
 検討事項</b>
 + CMakeListsを追加すべき？→cloneした時にどうなるかを検証すべき</b>
 + mac osでのxquartzに投げられるのか問題</b>
-</b>
+
+注意事項</b>
++ 最近のバグ？でrosmsgについてwarningが出るので、apt update&apt upgradeをする</b>
+
