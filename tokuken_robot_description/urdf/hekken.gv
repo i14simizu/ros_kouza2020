@@ -1,0 +1,56 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"body_link" [label="body_link"];
+"a_crank_link" [label="a_crank_link"];
+"a_asi_1_link" [label="a_asi_1_link"];
+"a_asi_2_link" [label="a_asi_2_link"];
+"a_asi_3_link" [label="a_asi_3_link"];
+"b_crank_link" [label="b_crank_link"];
+"b_asi_1_link" [label="b_asi_1_link"];
+"b_asi_2_link" [label="b_asi_2_link"];
+"b_asi_3_link" [label="b_asi_3_link"];
+"c_crank_link" [label="c_crank_link"];
+"c_asi_1_link" [label="c_asi_1_link"];
+"c_asi_2_link" [label="c_asi_2_link"];
+"c_asi_3_link" [label="c_asi_3_link"];
+"d_crank_link" [label="d_crank_link"];
+"d_asi_1_link" [label="d_asi_1_link"];
+"d_asi_2_link" [label="d_asi_2_link"];
+"d_asi_3_link" [label="d_asi_3_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "body_joint" [label="xyz: 0 0 0.05 \nrpy: 0 -0 0"]
+"body_joint" -> "body_link"
+"body_link" -> "a_crank_joint" [label="xyz: -0.0777 0.1375 0.013 \nrpy: 0 -0 0"]
+"a_crank_joint" -> "a_crank_link"
+"a_crank_link" -> "a_asi_1_joint" [label="xyz: 0.015 0.00433013 -0.0025 \nrpy: 0.663225 -0 0"]
+"a_asi_1_joint" -> "a_asi_1_link"
+"a_crank_link" -> "a_asi_2_joint" [label="xyz: 0.033 0 -0.005 \nrpy: 0 -0 0"]
+"a_asi_2_joint" -> "a_asi_2_link"
+"a_crank_link" -> "a_asi_3_joint" [label="xyz: 0.051 -0.00433013 -0.0025 \nrpy: -0.645772 0 0"]
+"a_asi_3_joint" -> "a_asi_3_link"
+"body_link" -> "b_crank_joint" [label="xyz: -0.1623 0.1375 0.013 \nrpy: 0 -0 0"]
+"b_crank_joint" -> "b_crank_link"
+"b_crank_link" -> "b_asi_1_joint" [label="xyz: -0.015 0.00433013 -0.0025 \nrpy: 0.663225 -0 0"]
+"b_asi_1_joint" -> "b_asi_1_link"
+"b_crank_link" -> "b_asi_2_joint" [label="xyz: -0.033 0 -0.005 \nrpy: 0 -0 0"]
+"b_asi_2_joint" -> "b_asi_2_link"
+"b_crank_link" -> "b_asi_3_joint" [label="xyz: -0.051 -0.00433013 -0.0025 \nrpy: -0.645772 0 0"]
+"b_asi_3_joint" -> "b_asi_3_link"
+"body_link" -> "c_crank_joint" [label="xyz: -0.1623 0.0475 0.013 \nrpy: 0 -0 0"]
+"c_crank_joint" -> "c_crank_link"
+"c_crank_link" -> "c_asi_1_joint" [label="xyz: -0.015 0.00433013 -0.0025 \nrpy: 0.663225 -0 0"]
+"c_asi_1_joint" -> "c_asi_1_link"
+"c_crank_link" -> "c_asi_2_joint" [label="xyz: -0.033 0 -0.005 \nrpy: 0 -0 0"]
+"c_asi_2_joint" -> "c_asi_2_link"
+"c_crank_link" -> "c_asi_3_joint" [label="xyz: -0.051 -0.00433013 -0.0025 \nrpy: -0.645772 0 0"]
+"c_asi_3_joint" -> "c_asi_3_link"
+"body_link" -> "d_crank_joint" [label="xyz: -0.0777 0.0475 0.013 \nrpy: 0 -0 0"]
+"d_crank_joint" -> "d_crank_link"
+"d_crank_link" -> "d_asi_1_joint" [label="xyz: 0.015 0.00433013 -0.0025 \nrpy: 0.663225 -0 0"]
+"d_asi_1_joint" -> "d_asi_1_link"
+"d_crank_link" -> "d_asi_2_joint" [label="xyz: 0.033 0 -0.005 \nrpy: 0 -0 0"]
+"d_asi_2_joint" -> "d_asi_2_link"
+"d_crank_link" -> "d_asi_3_joint" [label="xyz: 0.051 -0.00433013 -0.0025 \nrpy: -0.645772 0 0"]
+"d_asi_3_joint" -> "d_asi_3_link"
+}
