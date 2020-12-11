@@ -29,7 +29,7 @@
         <link name="${child}_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tokuken_robot_description/model/base/crank1_collide_ad_blen_low2.stl"/>
+                    <mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>
                 </geometry>
                 <material name="red"/>
             </visual>
@@ -46,7 +46,7 @@
         <link name="${child}_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tokuken_robot_description/model/base/asi_2_blen_low.stl"/>
+                    <mesh filename="package://tokuken_robot_description/models/base/asi_2_blen_low.stl"/>
                 </geometry>
                 <material name="green">
                     <color rgba="0.0 0.0 1.0 2.0"/>
@@ -65,7 +65,7 @@
         <link name="${child}_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tokuken_robot_description/model/base/asi_1_blen_low.stl"/>
+                    <mesh filename="package://tokuken_robot_description/models/base/asi_1_blen_low.stl"/>
                 </geometry>
                 <material name="green"/>
             </visual>
@@ -82,7 +82,7 @@
     <link name="body_link">
         <visual name="body">
             <geometry>
-                <mesh filename="package://tokuken_robot_description/model/base/base_blen_low_3.stl"/>
+                <mesh filename="package://tokuken_robot_description/models/base/base_blen_low_3.stl"/>
             </geometry>
         </visual>
     </link>
