@@ -7,6 +7,15 @@
             <child link="${child}_link"/>
             <axis xyz="1 0 0"/>
         </joint>
+        <transmission name="${child}_move" type="SimpleTransmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="${child}_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="${child}_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
         <link name="${child}_link">
             <visual>
                 <geometry>
@@ -16,7 +25,17 @@
                     <color rgba="1.0 0.0 0.0 2.0"/>
                 </material>
             </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>
+                </geometry>
+            </collision>
         </link>
+        <gazebo reference="${child}_link">
+            <material>Gazebo/Red</material>
+            <mu1 value="1.0" />
+            <mu2 value="1.0" />
+        </gazebo>
     </xacro:macro>
 
     <xacro:macro name="crank_right" params="parent child xyz">
@@ -26,6 +45,15 @@
             <child link="${child}_link"/>
             <axis xyz="1 0 0"/>
         </joint>
+        <transmission name="${child}_move" type="SimpleTransmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <actuator name="${child}_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+            <joint name="${child}_joint">
+                <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            </joint>
+        </transmission>
         <link name="${child}_link">
             <visual>
                 <geometry>
@@ -33,7 +61,17 @@
                 </geometry>
                 <material name="red"/>
             </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>
+                </geometry>
+            </collision>
         </link>
+        <gazebo reference="${child}_link">
+            <material>Gazebo/Red</material>
+            <mu1 value="1.0" />
+            <mu2 value="1.0" />
+        </gazebo>
     </xacro:macro>
 
     <xacro:macro name="asi_left" params="parent child xyz rpy">
@@ -52,7 +90,17 @@
                     <color rgba="0.0 0.0 1.0 2.0"/>
                 </material>
             </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://tokuken_robot_description/models/base/asi_2_blen_low.stl"/>
+                </geometry>
+            </collision>
         </link>
+        <gazebo reference="${child}_link">
+            <material>Gazebo/Green</material>
+            <mu1 value="1.0" />
+            <mu2 value="1.0" />
+        </gazebo>
     </xacro:macro>
 
     <xacro:macro name="asi_right" params="parent child xyz rpy">
@@ -69,7 +117,17 @@
                 </geometry>
                 <material name="green"/>
             </visual>
+            <collision>
+                <geometry>
+                    <mesh filename="package://tokuken_robot_description/models/base/asi_1_blen_low.stl"/>
+                </geometry>
+            </collision>
         </link>
+        <gazebo reference="${child}_link">
+            <material>Gazebo/Green</material>
+            <mu1 value="1.0" />
+            <mu2 value="1.0" />
+        </gazebo>
     </xacro:macro>
 
     <link name="base_link"/>
@@ -85,7 +143,17 @@
                 <mesh filename="package://tokuken_robot_description/models/base/base_blen_low_3.stl"/>
             </geometry>
         </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://tokuken_robot_description/models/base/base_blen_low_3.stl"/>
+            </geometry>
+        </collision>
     </link>
+    <gazebo reference="body_link">
+        <material>Gazebo/Blue</material>
+        <mu1 value="1.0" />
+        <mu2 value="1.0" />
+    </gazebo>
 
     <xacro:crank_left parent="body_link" child="b_crank" xyz="-0.1623 0.1375 0.013"/>
     <xacro:crank_left parent="body_link" child="c_crank" xyz="-0.1623 0.0475 0.013"/>
