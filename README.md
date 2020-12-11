@@ -5,6 +5,7 @@ now building
 TODO : </b>
 
 * tokuken_robotの追加 - Gazeboで動くようにする</b>
+* crankのメッシュ数を少なくする</b>
 * tokuken_robotにLRFを載せてみる</b>
 
 検討事項</b>
