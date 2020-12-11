@@ -41,7 +41,7 @@
             <origin xyz="${xyz}" rpy="${rpy}"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
-            <axis xyz="0 0 1"/>
+            <axis xyz="1 0 0"/>
         </joint>
         <link name="${child}_link">
             <visual>
@@ -60,7 +60,7 @@
             <origin xyz="${xyz}" rpy="${rpy}"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
-            <axis xyz="0 0 1"/>
+            <axis xyz="1 0 0"/>
         </joint>
         <link name="${child}_link">
             <visual>
@@ -94,5 +94,5 @@
     <xacro:crank_right parent="body_link" child="a_crank" xyz="-0.0777 0.1375 0.013"/>
 
     <!--TODO : xyz, rpy-->
-    <xacro:asi_left parent="b_crank_link" child="b_asi_1" xyz="-0.1773 0 0" rpy="0 0 0"/>
+    <xacro:asi_left parent="b_crank_link" child="b_asi_1" xyz="-0.1773 ${0.1375+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
 </robot>
