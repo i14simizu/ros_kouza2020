@@ -4,7 +4,7 @@ now building
 
 TODO : </b>
 
-* tokuken_robotの追加</b>
+* tokuken_robotの追加 - Gazeboで動くようにする</b>
 * tokuken_robotにLRFを載せてみる</b>
 
 検討事項</b>

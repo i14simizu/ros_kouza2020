@@ -93,7 +93,6 @@
     <xacro:crank_right parent="body_link" child="d_crank" xyz="-0.0777 0.0475 0.013"/>
     <xacro:crank_right parent="body_link" child="a_crank" xyz="-0.0777 0.1375 0.013"/>
 
-    <!--TODO : rpy-->
     <xacro:asi_left parent="b_crank_link" child="b_asi_1" xyz="-0.015 ${0.005*sin(radians(30))} ${-0.005*cos(radians(30))}" rpy="${radians(38)} 0 0"/>
     <xacro:asi_left parent="b_crank_link" child="b_asi_2" xyz="-0.033 0.0 -0.005" rpy="${radians(-8)} 0 0"/>
     <xacro:asi_left parent="b_crank_link" child="b_asi_3" xyz="-0.051 ${-0.005*sin(radians(30))} ${-0.005*cos(radians(30))}" rpy="${radians(-52)} 0 0"/>
