@@ -3,24 +3,27 @@ hekken:
     type: joint_state_controller/JointStateController
     publish_rate: 50
   
+  gazebo_ros_control/pid_gains:
+    a_crank_joint: {p: 100.0, i: 0.01, d: 10.0}
+    b_crank_joint: {p: 100.0, i: 0.01, d: 10.0}
+    c_crank_joint: {p: 100.0, i: 0.01, d: 10.0}
+    d_crank_joint: {p: 100.0, i: 0.01, d: 10.0}
+    
+
   a_crank_joint_controller:
     type: velocity_controllers/JointVelocityController
     joint: a_crank_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
   
   b_crank_joint_controller:
     type: velocity_controllers/JointVelocityController
     joint: b_crank_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
   c_crank_joint_controller:
     type: velocity_controllers/JointVelocityController
     joint: c_crank_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
   
   d_crank_joint_controller:
     type: velocity_controllers/JointVelocityController
     joint: d_crank_joint
-    pid: {p: 100.0, i: 0.01, d: 10.0}
 
 

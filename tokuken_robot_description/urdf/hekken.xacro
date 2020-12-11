@@ -21,7 +21,8 @@
         <link name="${child}_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>
+                    <mesh filename="package://tokuken_robot_description/models/base/crank2_ad.stl"/>
+                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>-->
                 </geometry>
                 <material name="red">
                     <color rgba="1.0 0.0 0.0 2.0"/>
@@ -29,7 +30,8 @@
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>
+                    <mesh filename="package://tokuken_robot_description/models/base/crank2_ad.stl"/>
+                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>-->
                 </geometry>
             </collision>
             <inertial>
@@ -42,7 +44,7 @@
             <material>Gazebo/Red</material>
             <mu1 value="1.0" />
             <mu2 value="1.0" />
-            <selfCollide>true</selfCollide>
+            <!--<selfCollide>true</selfCollide>-->
         </gazebo>
     </xacro:macro>
 
@@ -67,13 +69,15 @@
         <link name="${child}_link">
             <visual>
                 <geometry>
-                    <mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>
+                    <mesh filename="package://tokuken_robot_description/models/base/crank1_ad.stl"/>
+                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>-->
                 </geometry>
                 <material name="red"/>
             </visual>
             <collision>
                 <geometry>
-                    <mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>
+                    <mesh filename="package://tokuken_robot_description/models/base/crank1_ad.stl"/>
+                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>-->
                 </geometry>
             </collision>
             <inertial>
@@ -86,7 +90,7 @@
             <material>Gazebo/Red</material>
             <mu1 value="1.0" />
             <mu2 value="1.0" />
-            <selfCollide>true</selfCollide>
+            <!--<selfCollide>true</selfCollide>-->
         </gazebo>
     </xacro:macro>
 
@@ -163,7 +167,7 @@
     <joint name="body_joint" type="fixed">
         <parent link="base_link"/>
         <child link="body_link"/>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+        <origin xyz="0.0 0.0 0.05" rpy="0 0 0"/>
     </joint>
     <link name="body_link">
         <visual name="body">
