@@ -6,6 +6,8 @@
             <parent link="${parent}"/>
             <child link="${child}_link"/>
             <axis xyz="1 0 0"/>
+            <limit velocity="10.0" effort="0.2" />
+            <dynamics damping="0.1"/>
         </joint>
         <transmission name="${child}_move" type="SimpleTransmission">
             <type>transmission_interface/SimpleTransmission</type>
@@ -30,11 +32,17 @@
                     <mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>
                 </geometry>
             </collision>
+            <inertial>
+				<origin xyz="-0.037341 -0.000000002377 -0.002966" rpy="0 0 0"/>
+				<mass value="0.111155"/>
+				<inertia ixx="0.00001696" ixy="-0.000005133807" ixz="0.000000043631" iyy="0.00003475" iyz="-0.00002165" izz="0.00003573"/>
+			</inertial>
         </link>
         <gazebo reference="${child}_link">
             <material>Gazebo/Red</material>
             <mu1 value="1.0" />
             <mu2 value="1.0" />
+            <selfCollide>true</selfCollide>
         </gazebo>
     </xacro:macro>
 
@@ -44,6 +52,8 @@
             <parent link="${parent}"/>
             <child link="${child}_link"/>
             <axis xyz="1 0 0"/>
+            <limit velocity="10.0" effort="0.2" />
+            <dynamics damping="0.1"/>
         </joint>
         <transmission name="${child}_move" type="SimpleTransmission">
             <type>transmission_interface/SimpleTransmission</type>
@@ -66,11 +76,17 @@
                     <mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>
                 </geometry>
             </collision>
+            <inertial>
+				<origin xyz="0.037341 -0.000000002377 -0.002966" rpy="0 0 0"/>
+				<mass value="0.111155"/>
+				<inertia ixx="0.00001696" ixy="0.000005133807" ixz="-0.000000043631" iyy="0.00003475" iyz="0.00002165" izz="0.00003573"/>
+			</inertial>
         </link>
         <gazebo reference="${child}_link">
             <material>Gazebo/Red</material>
             <mu1 value="1.0" />
             <mu2 value="1.0" />
+            <selfCollide>true</selfCollide>
         </gazebo>
     </xacro:macro>
 
@@ -95,11 +111,17 @@
                     <mesh filename="package://tokuken_robot_description/models/base/asi_2_blen_low.stl"/>
                 </geometry>
             </collision>
+            <inertial>
+				<origin xyz="-0.0045155 -0.00563879 -0.00377687" rpy="0 0 0"/>
+				<mass value="0.010706"/>
+				<inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+			</inertial>
         </link>
         <gazebo reference="${child}_link">
             <material>Gazebo/Green</material>
             <mu1 value="1.0" />
             <mu2 value="1.0" />
+            <selfCollide>true</selfCollide>
         </gazebo>
     </xacro:macro>
 
@@ -122,11 +144,17 @@
                     <mesh filename="package://tokuken_robot_description/models/base/asi_1_blen_low.stl"/>
                 </geometry>
             </collision>
+            <inertial>
+				<origin xyz="0.0044845 -0.00563879 -0.00377687" rpy="0 0 0"/>
+				<mass value="0.010706"/>
+				<inertia ixx="0.000005401807" ixy="0.000000000185" ixz="0.000000000496" iyy="0.000003139093" iyz="-0.00000098431" izz="0.000002411247"/>
+			</inertial>
         </link>
         <gazebo reference="${child}_link">
             <material>Gazebo/Green</material>
             <mu1 value="1.0" />
             <mu2 value="1.0" />
+            <selfCollide>true</selfCollide>
         </gazebo>
     </xacro:macro>
 
@@ -148,11 +176,17 @@
                 <mesh filename="package://tokuken_robot_description/models/base/base_blen_low_3.stl"/>
             </geometry>
         </collision>
+        <inertial>
+            <origin xyz="-0.12003 0.0885733 0.024818" rpy="0 0 0"/>
+            <mass value="0.323853"/>
+			<inertia ixx="0.001101" ixy="-0.000000019489" ixz="-0.00000032811" iyy="0.001144" iyz="-0.00002903" izz="0.001950"/>
+		</inertial>
     </link>
     <gazebo reference="body_link">
         <material>Gazebo/Blue</material>
         <mu1 value="1.0" />
         <mu2 value="1.0" />
+        <selfCollide>true</selfCollide>
     </gazebo>
 
     <xacro:crank_left parent="body_link" child="b_crank" xyz="-0.1623 0.1375 0.013"/>
@@ -176,4 +210,12 @@
     <xacro:asi_right parent="d_crank_link" child="d_asi_1" xyz="0.015 ${0.005*sin(radians(30))} ${-0.005*cos(radians(30))}" rpy="${radians(38)} 0 0"/>
     <xacro:asi_right parent="d_crank_link" child="d_asi_2" xyz="0.033 0.0 -0.005" rpy="${radians(-8)} 0 0"/>
     <xacro:asi_right parent="d_crank_link" child="d_asi_3" xyz="0.051 ${-0.005*sin(radians(30))} ${-0.005*cos(radians(30))}" rpy="${radians(-52)} 0 0"/>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/hekken</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo>
 </robot>
