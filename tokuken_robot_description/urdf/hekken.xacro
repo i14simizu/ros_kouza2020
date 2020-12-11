@@ -94,19 +94,19 @@
     <xacro:crank_right parent="body_link" child="a_crank" xyz="-0.0777 0.1375 0.013"/>
 
     <!--TODO : rpy-->
-    <xacro:asi_left parent="b_crank_link" child="b_asi_1" xyz="-0.1773 ${0.1375+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
-    <xacro:asi_left parent="b_crank_link" child="b_asi_2" xyz="-0.1953 0.1375 0.008" rpy="0 0 0"/>
-    <xacro:asi_left parent="b_crank_link" child="b_asi_3" xyz="-0.2133 ${0.1375-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
+    <xacro:asi_left parent="b_crank_link" child="b_asi_1" xyz="-0.1773 ${0.1375+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0.78 0 0"/>
+    <xacro:asi_left parent="b_crank_link" child="b_asi_2" xyz="-0.1953 0.1375 0.008" rpy="0.2199114858 0 0"/>
+    <xacro:asi_left parent="b_crank_link" child="b_asi_3" xyz="-0.2133 ${0.1375-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="-0.3909537524 0 0"/>
 
-    <xacro:asi_left parent="c_crank_link" child="c_asi_1" xyz="-0.1773 ${0.0475+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
-    <xacro:asi_left parent="c_crank_link" child="c_asi_2" xyz="-0.1953 0.0475 0.008" rpy="0 0 0"/>
-    <xacro:asi_left parent="c_crank_link" child="c_asi_3" xyz="-0.2133 ${0.0475-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
+    <xacro:asi_left parent="c_crank_link" child="c_asi_1" xyz="-0.1773 ${0.0475+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0.78 0 0"/>
+    <xacro:asi_left parent="c_crank_link" child="c_asi_2" xyz="-0.1953 0.0475 0.008" rpy="0.2199114858 0 0"/>
+    <xacro:asi_left parent="c_crank_link" child="c_asi_3" xyz="-0.2133 ${0.0475-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="-0.3909537524 0 0"/>
 
-    <xacro:asi_right parent="a_crank_link" child="a_asi_1" xyz="-0.0627 ${0.1375+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
-    <xacro:asi_right parent="a_crank_link" child="a_asi_2" xyz="-0.0447 0.1375 0.008" rpy="0 0 0"/>
-    <xacro:asi_right parent="a_crank_link" child="a_asi_3" xyz="-0.0257 ${0.1375-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
+    <xacro:asi_right parent="a_crank_link" child="a_asi_1" xyz="-0.0627 ${0.1375+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0.78 0 0"/>
+    <xacro:asi_right parent="a_crank_link" child="a_asi_2" xyz="-0.0447 0.1375 0.008" rpy="0.2199114858 0 0"/>
+    <xacro:asi_right parent="a_crank_link" child="a_asi_3" xyz="-0.0257 ${0.1375-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="-0.3909537524 0 0"/>
 
-    <xacro:asi_right parent="d_crank_link" child="d_asi_1" xyz="-0.0627 ${0.0475+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
-    <xacro:asi_right parent="d_crank_link" child="d_asi_2" xyz="-0.0447 0.0475 0.008" rpy="0 0 0"/>
-    <xacro:asi_right parent="d_crank_link" child="d_asi_3" xyz="-0.0257 ${0.0475-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0 0 0"/>
+    <xacro:asi_right parent="d_crank_link" child="d_asi_1" xyz="-0.0627 ${0.0475+0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="0.78 0 0"/>
+    <xacro:asi_right parent="d_crank_link" child="d_asi_2" xyz="-0.0447 0.0475 0.008" rpy="0.2199114858 0 0"/>
+    <xacro:asi_right parent="d_crank_link" child="d_asi_3" xyz="-0.0257 ${0.0475-0.005*sin(radians(30))} ${0.013-0.005*cos(radians(30))}" rpy="-0.3909537524 0 0"/>
 </robot>
