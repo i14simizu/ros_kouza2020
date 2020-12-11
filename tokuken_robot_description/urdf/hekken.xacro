@@ -5,7 +5,7 @@
             <origin xyz="${xyz}" rpy="0 0 0"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
-            <axis xyz="0 0 1"/>
+            <axis xyz="1 0 0"/>
         </joint>
         <link name="${child}_link">
             <visual>
@@ -24,7 +24,7 @@
             <origin xyz="${xyz}" rpy="0 0 0"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
-            <axis xyz="0 0 1"/>
+            <axis xyz="1 0 0"/>
         </joint>
         <link name="${child}_link">
             <visual>
