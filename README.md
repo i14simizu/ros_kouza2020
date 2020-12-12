@@ -13,6 +13,7 @@ TODO : </b>
 + mac osでのxquartzに投げられるのか問題 → 解決した</b>
 + Gazeboにhekkenを出せたが、controlは未検証</b>
 + Gazeboにhekkenを出せたが、原点に集まるバグあり</b>
++ spawn時にworldファイルを取り込めるようにした
 
 注意事項</b>
 + 最近のバグ？でrosmsgについてwarningが出るので、apt update&apt upgrade, restartをする</b>
