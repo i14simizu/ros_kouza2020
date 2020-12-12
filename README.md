@@ -11,6 +11,7 @@ TODO : </b>
 検討事項</b>
 + CMakeListsを追加すべき？→cloneした時にどうなるかを検証すべき</b>
 + mac osでのxquartzに投げられるのか問題 → 解決した</b>
++ mac osでのxquartzの際、openGLができない</b>
 + Gazeboにhekkenを出せたが、controlは未検証</b>
 + Gazeboにhekkenを出せたが、原点に集まるバグあり</b>
 + spawn時にworldファイルを取り込めるようにした
