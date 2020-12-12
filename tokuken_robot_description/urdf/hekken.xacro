@@ -22,7 +22,6 @@
             <visual>
                 <geometry>
                     <mesh filename="package://tokuken_robot_description/models/base/crank2_lowp_ad_07.stl"/>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>-->
                 </geometry>
                 <material name="red">
                     <color rgba="1.0 0.0 0.0 2.0"/>
@@ -31,7 +30,6 @@
             <collision>
                 <geometry>
                     <mesh filename="package://tokuken_robot_description/models/base/crank2_lowp_ad_07.stl"/>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank2_collide_ad_blen_low2.stl"/>-->
                 </geometry>
             </collision>
             <inertial>
@@ -46,7 +44,6 @@
             <mu2 value="1.0" />
             <gravity>true</gravity>
             <minDepth>0.001</minDepth>
-            <!--<selfCollide>true</selfCollide>-->
         </gazebo>
     </xacro:macro>
 
@@ -72,14 +69,12 @@
             <visual>
                 <geometry>
                     <mesh filename="package://tokuken_robot_description/models/base/crank1_lowp_ad_07.stl"/>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>-->
                 </geometry>
                 <material name="red"/>
             </visual>
             <collision>
                 <geometry>
                     <mesh filename="package://tokuken_robot_description/models/base/crank1_lowp_ad_07.stl"/>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/crank1_collide_ad_blen_low2.stl"/>-->
                 </geometry>
             </collision>
             <inertial>
@@ -94,7 +89,6 @@
             <mu2 value="1.0" />
             <gravity>true</gravity>
             <minDepth>0.001</minDepth>
-            <!--<selfCollide>true</selfCollide>-->
         </gazebo>
     </xacro:macro>
 
@@ -108,7 +102,6 @@
         <link name="${child}_link">
             <visual>
                 <geometry>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/asi_2_blen_low_3_ad.stl"/>-->
                     <mesh filename="package://tokuken_robot_description/models/base/asi_2_blen_low.stl"/>
                 </geometry>
                 <material name="green">
@@ -117,7 +110,6 @@
             </visual>
             <collision>
                 <geometry>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/asi_2_blen_low_3_ad.stl"/>-->
                     <mesh filename="package://tokuken_robot_description/models/base/asi_2_blen_low.stl"/>
                 </geometry>
             </collision>
@@ -132,7 +124,6 @@
             <mu1 value="1.0" />
             <mu2 value="1.0" />
             <gravity>true</gravity>
-            <selfCollide>true</selfCollide>
         </gazebo>
     </xacro:macro>
 
@@ -146,7 +137,6 @@
         <link name="${child}_link">
             <visual>
                 <geometry>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl"/>-->
                     <mesh filename="package://tokuken_robot_description/models/base/asi_1_blen_low.stl"/>
                 </geometry>
                 <material name="green"/>
@@ -154,7 +144,6 @@
             <collision>
                 <geometry>
                     <mesh filename="package://tokuken_robot_description/models/base/asi_1_blen_low_3_ad.stl"/>
-                    <!--<mesh filename="package://tokuken_robot_description/models/base/asi_1_blen_low.stl"/>-->
                 </geometry>
             </collision>
             <inertial>
@@ -167,7 +156,6 @@
             <material>Gazebo/Green</material>
             <mu1 value="1.0" />
             <mu2 value="1.0" />
-            <selfCollide>true</selfCollide>
             <gravity>true</gravity>
         </gazebo>
     </xacro:macro>
@@ -201,14 +189,12 @@
         <mu1 value="1.0" />
         <mu2 value="1.0" />
         <gravity>true</gravity>
-        <selfCollide>true</selfCollide>
         <minDepth>0.001</minDepth>
     </gazebo>
 
     <xacro:crank_left parent="body_link" child="b_crank" xyz="-0.1623 0.1375 0.013"/>
     <xacro:crank_left parent="body_link" child="c_crank" xyz="-0.1623 0.0475 0.013"/>
 
-    <!--
     <xacro:crank_right parent="body_link" child="d_crank" xyz="-0.0777 0.0475 0.013"/>
     <xacro:crank_right parent="body_link" child="a_crank" xyz="-0.0777 0.1375 0.013"/>
 
@@ -235,5 +221,4 @@
             <legacyModeNS>true</legacyModeNS>
         </plugin>
     </gazebo>
-    -->
 </robot>
