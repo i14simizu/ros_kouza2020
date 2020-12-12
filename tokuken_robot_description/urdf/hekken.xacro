@@ -93,11 +93,12 @@
     </xacro:macro>
 
     <xacro:macro name="asi_left" params="parent child xyz rpy">
-        <joint name="${child}_joint" type="continuous">
+        <joint name="${child}_joint" type="revolute">
             <origin xyz="${xyz}" rpy="${rpy}"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
             <axis xyz="1 0 0"/>
+            <limit lower="${radians(-52)}" upper="${radians(38)}" effort="1.0" velocity="10.0"/>
         </joint>
         <link name="${child}_link">
             <visual>
@@ -128,11 +129,12 @@
     </xacro:macro>
 
     <xacro:macro name="asi_right" params="parent child xyz rpy">
-        <joint name="${child}_joint" type="continuous">
+        <joint name="${child}_joint" type="revolute">
             <origin xyz="${xyz}" rpy="${rpy}"/>
             <parent link="${parent}"/>
             <child link="${child}_link"/>
             <axis xyz="1 0 0"/>
+            <limit lower="${radians(-52)}" upper="${radians(38)}" effort="1.0" velocity="10.0"/>
         </joint>
         <link name="${child}_link">
             <visual>
