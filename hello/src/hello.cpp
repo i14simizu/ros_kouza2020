@@ -12,8 +12,7 @@ int main(int argc, char** argv){
   // }
 
   int count = 0;
-  while (ros::ok())
-  {
+  while (ros::ok()){
     ROS_DEBUG("log:%d", count);
     ROS_INFO("log:%d", count);
     ROS_WARN("log:%d", count);
