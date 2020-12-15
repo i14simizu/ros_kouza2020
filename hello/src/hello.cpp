@@ -5,7 +5,7 @@
 int main(int argc, char** argv){
   ros::init(argc, argv, "hello_node");
   ros::NodeHandle n;
-  ros::Rate loop_rate(5);
+  ros::Rate loop_rate(0.5);
   // if (ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Debug))
   // {
   //   ros::console::notifyLoggerLevelsChanged();
