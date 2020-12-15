@@ -12,12 +12,12 @@
       <uri>model://ground_plane</uri>
     </include>
   -->
-    <!--
+
     <include>
       <uri>model://base</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
-    -->
+
 
     <scene>
       <shadows>0</shadows>
